@@ -48,7 +48,11 @@
 
         if(dead === true) {
             alert("Game Over! Score: " + score);
-            document.location.reload();
+            score = 0;
+            dead = false;
+            pace = -10;
+            enemy = new Enemy(pace);
+            gotScore = false;
         }
 
         if (player.checkContact(enemy.returnPos())) {
